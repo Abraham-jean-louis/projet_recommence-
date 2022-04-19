@@ -1,0 +1,86 @@
+<div class="shop-single shopping-cart">
+                <div class="container">
+                    <div class="row">
+                    
+                        <div class="col-md-12 col-sm-12">
+                            <table class="cart-table">
+                                <tbody><tr>
+                                    <th>Image</th>
+                                    <th>Titre</th>
+                                    <th>Prix U</th>
+                                    <th>Qté</th>
+                                    <th>Sous total</th>
+                                    <th>Supprimer</th>
+                                </tr>
+                                <?php 
+                                    for($i = 0; $i < count($_SESSION['panier']['idProduit']); $i++)
+                                 {
+                                ?>
+                                <tr>
+                                    <td><img src="<?= $_SESSION['panier']['imageProduit'][$i] ?>" class="img-responsive" alt=""></td>
+                                    <td><?= $_SESSION['panier']['libelleProduit'][$i] ?></td>
+                                    <td>
+                                        <div class="item-price"><?= $_SESSION['panier']['prixProduit'][$i] ?>€</div>
+                                    </td>
+                                    <td>
+                                        <div class="item-price"><?= $_SESSION['panier']['qteProduit'][$i] ?></div>
+                                    </td>
+                                    <td>
+                                        <div class="item-price"><?= $_SESSION['panier']['qteProduit'][$i]*$_SESSION['panier']['prixProduit'][$i] ?>€</div>
+                                    </td>
+                                    <td><a href="detail_panier.php?delete=<?= $_SESSION['panier']['idProduit'][$i] ?>"><i class="fa fa-trash-o"></i></a></td>
+                                    
+                                </tr>
+                                <?php 
+                                    }
+                                ?>
+
+
+
+
+                            </tbody></table>
+                            <div class="table-btn">
+                                <button  type="submit" class="btn-black pull-left" name="send" > <a href="pre_paiement.php"> Shopping </a> </button>
+                                
+                                <a href="#" class="btn-black pull-right">Update Shopping Cart</a>
+                            </div>
+                            <div class="clearfix space20"></div>
+                            <div class="row shipping-info-wrap">
+                           
+                               
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                <form action="paiement.php" method="post">
+                                    <div class="totals">
+                                        <table id="shopping-cart-totals-table">
+                                            <tfoot>
+                                                <tr>
+                                                    <td style="" class="a-right" colspan="1">
+                                                        <strong>Grand Total : </strong>
+                                                    </td>
+                                                    <td style="" class="a-right">
+                                                        <strong><span class="price"><?= MontantGlobal()?>€</span></strong>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                            
+                                        </table>
+                                        <ul class="checkout-types">
+                                            <li class="space10"><button type="button" class="btn-color">payer</button></li>
+                                            <li><a href="#">Checkout with Multiple Addresses</a></li>
+                                        </ul>
+                                    </div>
+                                </form>
+                                </div>
+                          
+                            </div>
+                            <div class="space40"></div>
+                           
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>        
+                    
+              
+           
+        

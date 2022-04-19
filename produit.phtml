@@ -1,0 +1,90 @@
+
+
+            <!-- BREADCRUMBS -->
+            <div class="bcrumbs">
+                <div class="container">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li>Product Fashion</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="space10"></div>
+
+            <!-- MAIN CONTENT -->
+            <div class="shop-single">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-md-5 col-sm-6">                                    
+                                   <img src="<?php echo $produits['image'];?>" style="max-width:100%;">
+
+                                    
+                                </div>
+                                <div class="col-md-7 col-sm-6">
+                                    <div class="product-single">
+                                        <div class="ps-header">
+                                            <h3><?php echo $produits['titre'];?></h3>
+                                           
+                                            <div class="ps-price"> <?php echo $produits['prix'];?></div>
+                                        </div>
+                                        <p>Description</p>
+                                        <div class="ps-stock">
+                                            Available: <a href="#"><?php echo $produits['qte'];?></a>
+                                        </div>
+                                        <div class="sep"></div>
+                                        
+                                        <div class="space10"></div>
+                                        
+                                        <form  method="POST">
+                                            <input type="number" value=1 name="qte">
+                                            <button type="submit" class="addtobag" name="panier" >Ajouter au panier</button>
+                                    
+                                        </form>
+                                       </div>
+                                </div>
+                            </div>
+                            <div class="clearfix space40"></div>
+                            
+                            <div class="clearfix space40"></div>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <h5 class="heading space40"><span>produits similaires</span></h5>
+                                    <div class="product-carousel3">
+                                        <?php foreach($similaires as $prod){?>
+                                        <div class="pc-wrap">
+                                            <div class="product-item">
+                                                <div class="item-thumb">
+                                                    <img src="<?php echo $prod['image']; ?>" class="img-responsive" alt=""/>
+                                                </div>
+                                                <div class="product-info">
+                                                   
+                                                    <h4 class="product-title"><a href="produit.php?id=<?php echo $prod['id'];?>"><?php echo $prod['titre']; ?></a></h4>
+                                                    <span class="product-price"><?php echo $prod['prix'];?>$ </span>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <?php }?>
+                                      
+                                       
+                                     
+                                        
+                                        
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix space20"></div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix space20"></div>

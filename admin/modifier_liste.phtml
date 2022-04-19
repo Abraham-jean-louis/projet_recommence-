@@ -1,0 +1,127 @@
+<div class="content-page">
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    
+                                    <h4 class="page-title">Modifier une produit</h4>
+                                </div>
+                            </div>
+                        </div>     
+                        <!-- end page title -->
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-box">
+                                
+                                    <form role="form" class="parsley-examples" method="POST">
+                                        <?php if( $modif_ok==1) { ?>
+                                         <div class="alert alert-success" role="alert">
+                                          L'ajout a bien été effectué
+                                        </div>
+                                         <?php } ?>
+
+                                        <div class="form-group row">
+                                            <label for="inputEmail3" class="col-sm-4 col-form-label">Titre<span class="text-danger">*</span></label>
+                                            <div class="col-sm-7">
+                                                <input type="text" required parsley-type="text" class="form-control"
+                                                        id="inputEmail3" placeholder="Titre" name="titre" value="<?= $produit['titre']?>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="hori-pass1" class="col-sm-4 col-form-label">Prix<span class="text-danger">*</span></label>
+                                            <div class="col-sm-7">
+                                                <input id="hori-pass1" type="text" placeholder="Prix" required
+                                                        class="form-control" name="prix" value="<?= $produit['prix']?>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="hori-pass1" class="col-sm-4 col-form-label">Qte<span class="text-danger">*</span></label>
+                                            <div class="col-sm-7">
+                                                <input id="hori-pass1" type="text" placeholder="Qte" required
+                                                        class="form-control" name="qte" value="<?= $produit['qte']?>">
+                                            </div>
+                                        </div>
+
+        
+                                        <div class="form-group row">
+                                            <label for="hori-pass1" class="col-sm-4 col-form-label">Categorie<span class="text-danger">*</span></label>
+                                            <div class="col-sm-7">
+                                                       <select id="" name="categorie_id" class="form-control">
+                                                            <?php foreach($categories as $cat){ ?>
+                                                            <option <?php if($cat['id']==$produit['categorie_id']){echo 'selected';} ?> value="<?= $cat['id'] ?>"><?= $cat['titre'] ?></option>
+                                                            <?php } ?>
+                                                        </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="webSite" class="col-sm-4 col-form-label">Image<span class="text-danger">*</span></label>
+                                            <div class="col-sm-7">
+                                                <input type="url" required parsley-type="url" class="form-control"
+                                                        id="webSite" placeholder="Image_URL" name="image" value="<?= $produit['image']?>">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group row mb-0">
+                                            <div class="col-sm-8 offset-sm-4">
+                                                <button type="submit" name="ModifierProduit" class="btn btn-primary waves-effect waves-light mr-1">
+                                                    Modifier_Produit
+                                                </button>
+                                            
+                                            </div>
+                                        </div>
+                                    </form>
+        
+                                </div> <!-- end card-box -->
+                            </div><!-- end col -->
+                        </div>
+                        <!-- end row -->
+        
+        
+        
+                        
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                <!-- Footer Start -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                2018 - 2019 &copy; Greeva theme by <a href="">Coderthemes</a> 
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- end Footer -->
+
+            </div>
+ <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- KNOB JS -->
+        <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
+        <!-- Chart JS -->
+        <script src="assets/libs/chart-js/Chart.bundle.min.js"></script>
+
+        <!-- Jvector map -->
+        <script src="assets/libs/jqvmap/jquery.vmap.min.js"></script>
+        <script src="assets/libs/jqvmap/jquery.vmap.usa.js"></script>
+        
+        <!-- Datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <!-- Dashboard Init JS -->
+        <script src="assets/js/pages/dashboard.init.js"></script>
+        
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>

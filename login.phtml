@@ -1,0 +1,88 @@
+
+
+            <!-- BREADCRUMBS -->
+            <div class="bcrumbs">
+                <div class="container">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li>Login</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="space10"></div>
+
+            <!-- MY ACCOUNT -->
+            <div class="account-wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6">
+                            <!-- HTML -->
+                            <div id="account-id">
+                                <h4 class="account-title"><span class="fa fa-chevron-right"></span>CONNEXION</h4>                                                                  
+                                <div class="account-form">
+                                     <?php if($connexion_error==1){ ?>
+                                        <div class="alert alert-danger" role="alert">
+                                          email ou mot de passe incorrect
+                                        </div>
+                                    <?php } ?>
+                                    <form class="form-login" method="POST">                                        
+                                        <ul class="form-list row">
+                                           
+                                            <li class="col-md-12 col-sm-12">
+                                                <label >Email <em>*</em></label>
+                                                <input required type="text" name="cemail" class="input-text">
+                                            </li>
+                                            <li class="col-md-12 col-sm-12">
+                                                <label >Mot de passe <em>*</em></label>
+                                                <input required type="password"  name="cpassword" class="input-text">
+                                            </li> 
+                                           
+                                        </ul>
+                                        <div class="buttons-set">
+                                            <button class="btn-black" name="connexion" type="submit"><span>login</span></button>
+                                        </div>
+                                    </form>
+                                </div>                                    
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-6">
+                            <!-- HTML -->
+                            <div id="account-id">
+                                <h4 class="account-title"><span class="fa fa-chevron-right"></span>INSCRIPTION</h4>                                                                  
+                                <div class="account-form">
+                                    <?php if($inscription_ok==1){?>
+                                        <div class="alert alert-success" role="alert">
+                                          votre inscription a bien été prise en compte
+                                          <br>
+                                          veuillez vous connecter
+                                        </div>
+                                    <?php } ?>
+                                    <form class="form-login" method="POST">                                        
+                                        <ul class="form-list row">
+                                           
+                                            <li class="col-md-12 col-sm-12">
+                                                <label >Nom & prénom <em>*</em></label>
+                                                <input required type="text"  name="nom" class="input-text">
+                                            </li>
+                                            <li class="col-md-12 col-sm-12">
+                                                <label >Email <em>*</em></label>
+                                                <input required type="text" name="email" class="input-text">
+                                            </li>
+                                            <li class="col-md-12 col-sm-12">
+                                                <label >Mot de passe <em>*</em></label>
+                                                <input required type="password" name="password" class="input-text">
+                                            </li> 
+                                           
+                                        </ul>
+                                        <div class="buttons-set">
+                                            <button class="btn-black" name="inscription" type="submit"><span>inscription</span></button>
+                                        </div>
+                                    </form>
+                                </div>                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix space20"></div>
